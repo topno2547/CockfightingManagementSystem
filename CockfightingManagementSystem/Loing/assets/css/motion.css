@@ -405,3 +405,60 @@ body:has(.forgotpw-container) {
 
 
 
+
+/* =========================
+   Requested Non-home Overrides
+   แก้ตามคำขอ: หน้าอื่นไม่เล่น animation ตอนเปิดหน้า และ input focus เป็นสีเทาอ่อน 2px
+========================= */
+body:not(.home-page) .reveal,
+body:not(.home-page) .reveal-left,
+body:not(.home-page) .reveal-right,
+body:not(.home-page) .reveal-scale {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+    transition-delay: 0ms !important;
+    will-change: auto !important;
+}
+
+body:not(.home-page) .policy-box,
+body:not(.home-page) .success-box,
+body:not(.home-page) .farm-success-box,
+body:not(.home-page) .modal-box,
+body:not(.home-page) .about-modal-box {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+    will-change: auto !important;
+}
+
+body:not(.home-page) .login-card,
+body:not(.home-page) .dashboard-shell,
+body:not(.home-page) .dashboard-card,
+body:not(.home-page) .market-card,
+body:not(.home-page) .profile-card,
+body:not(.home-page) .otp-card,
+body:not(.home-page) .reset-card,
+body:not(.home-page) .forgotpw-container,
+body:not(.home-page) .upload-box {
+    animation: none !important;
+}
+
+body:not(.home-page) .input-group:focus-within {
+    transform: none !important;
+    border-color: #d1d5db !important;
+    box-shadow: 0 0 0 2px rgba(209, 213, 219, 0.72) !important;
+}
+
+body:not(.home-page) input:focus,
+body:not(.home-page) textarea:focus,
+body:not(.home-page) select:focus,
+body:not(.home-page) .login-input:focus,
+body:not(.home-page) .otp-input:focus,
+body:not(.home-page) .otp-field:focus {
+    outline: none !important;
+    border-color: #d1d5db !important;
+    box-shadow: 0 0 0 2px rgba(209, 213, 219, 0.72) !important;
+}

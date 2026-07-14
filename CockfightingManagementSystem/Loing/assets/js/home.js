@@ -19,8 +19,8 @@ const API_ENDPOINTS = {
     farms: "../api/farms.php" // TODO: เปลี่ยน URL ให้ตรงกับ endpoint PHP ของเพื่อนเมื่อพร้อม
 };
 const USE_BACKEND_COLLECTIONS = false; // TODO: เปลี่ยนเป็น true เมื่อ api/chickens.php และ api/farms.php พร้อมใช้งาน
-const FALLBACK_CHICKEN_IMAGE = "../images/main.png";
-const FALLBACK_FARM_IMAGE = "../images/logo.png";
+const FALLBACK_CHICKEN_IMAGE = "assets/images/main.png";
+const FALLBACK_FARM_IMAGE = "assets/images/logo.png";
 
 function imageOrFallback(imagePath, fallbackImage = FALLBACK_CHICKEN_IMAGE) {
     return imagePath && String(imagePath).trim() !== "" ? imagePath : fallbackImage;
@@ -51,22 +51,22 @@ if (mobileMenuBtn && navMenu) {
 
 
 let chickens = [
-    { name: "เจ้าทอง", breed: "พม่า", age: "12 เดือน", gender: "เพศผู้", price: 4500, farm: "ฟาร์มพัฒนา", image: "../images/main.png" },
-    { name: "เจ้าแดง", breed: "ไทย", age: "10 เดือน", gender: "เพศผู้", price: 12000, farm: "บ้านไก่ชน", image: "../images/main.png" },
-    { name: "เจ้าสายฟ้า", breed: "ญี่ปุ่น", age: "9 เดือน", gender: "เพศผู้", price: 8900, farm: "ฟาร์มลูกบาศก์", image: "../images/main.png" },
-    { name: "เจ้าเพชร", breed: "ไซง่อน", age: "14 เดือน", gender: "เพศผู้", price: 6000, farm: "ซุ้มไก่ทอง", image: "../images/main.png" },
-    { name: "เจ้านิล", breed: "พม่า", age: "11 เดือน", gender: "เพศผู้", price: 7500, farm: "ซุ้มไก่เมือง", image: "../images/main.png" },
-    { name: "เจ้าคม", breed: "ไทย", age: "13 เดือน", gender: "เพศผู้", price: 9800, farm: "ฟาร์มนักสู้", image: "../images/main.png" },
-    { name: "เจ้ามังกร", breed: "ไซง่อน", age: "15 เดือน", gender: "เพศผู้", price: 15000, farm: "ฟาร์มมังกรทอง", image: "../images/main.png" },
-    { name: "เจ้าพายุ", breed: "ญี่ปุ่น", age: "10 เดือน", gender: "เพศผู้", price: 11000, farm: "ฟาร์มสายฟ้า", image: "../images/main.png" },
-    { name: "เจ้าเสือ", breed: "พม่า", age: "16 เดือน", gender: "เพศผู้", price: 18000, farm: "ซุ้มเสือดำ", image: "../images/main.png" },
-    { name: "เจ้าเพลิง", breed: "ไทย", age: "12 เดือน", gender: "เพศผู้", price: 5200, farm: "บ้านไก่เพลิง", image: "../images/main.png" }
+    { name: "เจ้าทอง", breed: "พม่า", age: "12 เดือน", gender: "เพศผู้", price: 4500, farm: "ฟาร์มพัฒนา", image: "assets/images/main.png" },
+    { name: "เจ้าแดง", breed: "ไทย", age: "10 เดือน", gender: "เพศผู้", price: 12000, farm: "บ้านไก่ชน", image: "assets/images/main.png" },
+    { name: "เจ้าสายฟ้า", breed: "ญี่ปุ่น", age: "9 เดือน", gender: "เพศผู้", price: 8900, farm: "ฟาร์มลูกบาศก์", image: "assets/images/main.png" },
+    { name: "เจ้าเพชร", breed: "ไซง่อน", age: "14 เดือน", gender: "เพศผู้", price: 6000, farm: "ซุ้มไก่ทอง", image: "assets/images/main.png" },
+    { name: "เจ้านิล", breed: "พม่า", age: "11 เดือน", gender: "เพศผู้", price: 7500, farm: "ซุ้มไก่เมือง", image: "assets/images/main.png" },
+    { name: "เจ้าคม", breed: "ไทย", age: "13 เดือน", gender: "เพศผู้", price: 9800, farm: "ฟาร์มนักสู้", image: "assets/images/main.png" },
+    { name: "เจ้ามังกร", breed: "ไซง่อน", age: "15 เดือน", gender: "เพศผู้", price: 15000, farm: "ฟาร์มมังกรทอง", image: "assets/images/main.png" },
+    { name: "เจ้าพายุ", breed: "ญี่ปุ่น", age: "10 เดือน", gender: "เพศผู้", price: 11000, farm: "ฟาร์มสายฟ้า", image: "assets/images/main.png" },
+    { name: "เจ้าเสือ", breed: "พม่า", age: "16 เดือน", gender: "เพศผู้", price: 18000, farm: "ซุ้มเสือดำ", image: "assets/images/main.png" },
+    { name: "เจ้าเพลิง", breed: "ไทย", age: "12 เดือน", gender: "เพศผู้", price: 5200, farm: "บ้านไก่เพลิง", image: "assets/images/main.png" }
 ];
 
 let farms = [
-    { name: "ฟาร์มลูกบาศก์", province: "นครศรีธรรมราช", chickens: 54, rating: 4.9, image: "../images/logo.png" },
-    { name: "ซุ้มไก่ชนเมือง", province: "สุราษฎร์ธานี", chickens: 38, rating: 4.8, image: "../images/logo.png" },
-    { name: "บ้านไก่ชนออนไลน์", province: "กรุงเทพมหานคร", chickens: 42, rating: 4.7, image: "../images/logo.png" }
+    { name: "ฟาร์มลูกบาศก์", province: "นครศรีธรรมราช", chickens: 54, rating: 4.9, image: "assets/images/logo.png" },
+    { name: "ซุ้มไก่ชนเมือง", province: "สุราษฎร์ธานี", chickens: 38, rating: 4.8, image: "assets/images/logo.png" },
+    { name: "บ้านไก่ชนออนไลน์", province: "กรุงเทพมหานคร", chickens: 42, rating: 4.7, image: "assets/images/logo.png" }
 ];
 
 /* =========================
@@ -486,7 +486,6 @@ const aboutModalImage = document.querySelector("#about-modal-image");
 */
 const aboutContent = {
     buyer: {
-        icon: "bi-search-heart",
         title: "สำหรับผู้ซื้อ",
         paragraphs: [
             "Super Kaichon ช่วยให้ผู้ซื้อสามารถค้นหาไก่ชนจากหลายฟาร์มได้ในที่เดียว โดยไม่จำเป็นต้องค้นหาข้อมูลจากหลายแหล่งให้เสียเวลา",
@@ -498,9 +497,8 @@ const aboutContent = {
     },
 
     farm: {
-        icon: "bi-house-heart",
         title: "สำหรับเจ้าของฟาร์ม",
-        image: "../images/main.png",
+        image: "assets/images/main.png",
 
         paragraphs: [
             "ระบบนี้ช่วยให้เจ้าของฟาร์มสามารถจัดการข้อมูลฟาร์มและข้อมูลไก่ชนได้อย่างเป็นระบบ ลดการจดบันทึกแบบกระดาษที่อาจสูญหายหรือค้นหายาก",
@@ -512,7 +510,6 @@ const aboutContent = {
     },
 
     trust: {
-        icon: "bi-shield-check",
         title: "ผู้พัฒนา",
 
         paragraphs: [
@@ -521,16 +518,16 @@ const aboutContent = {
         ],
 
         developers: [
-            {
-                name: "นายกฤษณะ เทพาฤทธิ์",
-                role: "66011211002",
-                image: "../images/66011211002.jpg"
-            },
-            {
-                name: "นายชยางกูร หมอยา",
-                role: "66011211108",
-                image: "../images/66011211108.jpg"
-            }
+                    {
+                        name: "นายกฤษณะ เทพาฤทธิ์",
+                        role: "66011211002",
+                        image: "assets/images/66011211002.jpg",
+                    },
+                    {
+                        name: "นายชยางกูร หมอยา",
+                        role: "66011211108",
+                        image: "assets/images/66011211108.jpg",
+                    }
         ]
     }
 };
@@ -593,7 +590,7 @@ function openAboutModal(key) {
                         return `
                             <div class="about-developer-card">
                                 <img 
-                                    src="${developer.image}" 
+                                    src="${new URL(developer.image, window.location.href).href}" 
                                     alt="${developer.name}" 
                                     class="about-developer-photo"
                                     onerror="this.onerror=null; this.src='${FALLBACK_FARM_IMAGE}';"
@@ -798,19 +795,22 @@ if (marketPrevBtn && marketNextBtn && marketTrack) {
 
 /* =========================
    Scroll Reveal Animation System
-   (Intersection Observer - ไม่ใช้ Library ภายนอก)
+   แก้ตามคำขอ: ทำงานเฉพาะหน้าแรก, สมูทขึ้น, เล่นครั้งเดียว, รองรับ prefers-reduced-motion
 ========================= */
-const revealObserver = ("IntersectionObserver" in window)
+const isHomePage = document.body.classList.contains("home-page");
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+const revealObserver = (isHomePage && !prefersReducedMotion && "IntersectionObserver" in window)
     ? new IntersectionObserver(function (entries, observer) {
         entries.forEach(function (entry) {
             if (entry.isIntersecting) {
                 entry.target.classList.add("show");
-                observer.unobserve(entry.target); // เล่นครั้งเดียวพอ ไม่ต้องเล่นซ้ำตอนเลื่อนกลับขึ้น
+                observer.unobserve(entry.target);
             }
         });
     }, {
-        threshold: 0.15,
-        rootMargin: "0px 0px -60px 0px"
+        threshold: 0.18,
+        rootMargin: "0px 0px -56px 0px"
     })
     : null;
 
@@ -825,7 +825,6 @@ function observeReveal(scope) {
         if (revealObserver) {
             revealObserver.observe(target);
         } else {
-            // เบราว์เซอร์เก่าที่ไม่รองรับ IntersectionObserver ให้แสดงผลทันที
             target.classList.add("show");
         }
     });

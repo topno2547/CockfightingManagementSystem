@@ -768,7 +768,7 @@ body {
 }
 
 .farm-btn:hover {
-    background: #047857;
+    background: #1c1b1b;
     color: white;
 }
 
@@ -780,6 +780,7 @@ body {
     color: white;
 
     padding: 46px 0 26px;
+    margin-top: 80px;
 }
 
 .footer-container {
@@ -1173,11 +1174,12 @@ body {
 }
 
 .section-header h2 {
+    margin-top: 40px;
     font-size: 36px;
-    font-weight: 600;
+    font-weight: 800;
     color: #111827;
-    margin-bottom: 14px;
-    font-family: 'Prompt', 'Noto Sans Thai', 'Share Tech', Prompt;
+    margin-bottom: 12px;
+    font-family: 'Share Tech', 'Noto Sans Thai', 'Share Tech',;
 }
 
 .section-header.row-header {
@@ -1536,8 +1538,8 @@ body.modal-open {
 .about-image-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 26px;
-    margin-top: 34px;
+    gap: 30px;
+    margin-top: 15px;
 }
 
 .about-image-card {
@@ -1547,7 +1549,7 @@ body.modal-open {
     aspect-ratio: 2 / 3;
 
     border: none;
-    border-radius: 34px;
+    border-radius: 30px;
 
     padding: 0;
     overflow: hidden;
@@ -1838,7 +1840,6 @@ body.modal-open {
 
     cursor: pointer;
 
-    box-shadow: 0 12px 28px rgba(4, 120, 87, 0.22);
 
     transition:
         transform .22s ease,
@@ -1846,11 +1847,6 @@ body.modal-open {
         filter .22s ease;
 }
 
-.about-modal-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 18px 36px rgba(4, 120, 87, 0.30);
-    filter: brightness(1.05);
-}
 
 .about-modal-btn:active {
     transform: scale(.98);
@@ -3091,5 +3087,424 @@ body.modal-open {
 
     .search-section {
         margin-top: 16px;
+    }
+}
+
+/* =========================
+   Developer Photos Fix
+========================= */
+.about-developer-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: 16px;
+}
+
+.about-developer-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    min-width: 0;
+    padding: 14px;
+    border: 1px solid rgba(17, 24, 39, 0.10);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.82);
+}
+
+.about-developer-photo {
+    display: block;
+    width: 74px;
+    height: 74px;
+    flex: 0 0 74px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 999px;
+    border: 3px solid #ffffff;
+    box-shadow: 0 12px 26px rgba(0, 0, 0, 0.16);
+    background: #f3f4f6;
+}
+
+.about-developer-info {
+    min-width: 0;
+}
+
+.about-developer-info h4 {
+    margin: 0 0 4px;
+    font-size: 15px;
+    font-weight: 800;
+    color: #111827;
+}
+
+.about-developer-info p {
+    margin: 0;
+    font-size: 13px;
+    color: #6b7280;
+}
+
+@media (max-width: 640px) {
+    .about-developer-list {
+        grid-template-columns: 1fr;
+    }
+}
+/* =========================
+   Requested Home-only Motion & Focus
+   แก้ตามคำขอ: animation เฉพาะหน้าแรก + focus input สีเทาอ่อน 2px
+========================= */
+/* =========================================================
+   HOME PAGE — Focus + Smooth Animation
+   ใช้เฉพาะหน้าแรกที่มี <body class="home-page">
+========================================================= */
+
+/* =========================================================
+   1. INPUT / TEXTAREA / SELECT
+   ไม่มีสีเขียว และไม่มีกรอบสี่เหลี่ยมซ้อน
+========================================================= */
+
+/* ปิดกรอบของ Browser */
+.home-page input,
+.home-page textarea,
+.home-page select,
+.home-page button {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* ช่องกรอกข้อมูลทั่วไป */
+.home-page input:focus,
+.home-page input:focus-visible,
+.home-page textarea:focus,
+.home-page textarea:focus-visible {
+    outline: none !important;
+
+    border-color: #d1d5db !important;
+    background-color: #ffffff !important;
+
+    /* เงาตามขอบของช่องกรอกเท่านั้น */
+    box-shadow: 0 0 0 2px rgba(209, 213, 219, 0.45) !important;
+}
+
+/* Select */
+.home-page select:focus,
+.home-page select:focus-visible,
+.home-page .search-card select:focus,
+.home-page .search-card select:focus-visible {
+    outline: none !important;
+
+    border-color: #d1d5db !important;
+    background-color: #ffffff !important;
+
+    box-shadow: 0 0 0 2px rgba(209, 213, 219, 0.45) !important;
+}
+
+/* =========================================================
+   ช่องค้นหา
+========================================================= */
+
+/* กล่องแม่ห้ามสร้างกรอบสี่เหลี่ยม */
+.home-page .search-input-group,
+.home-page .search-input-group:focus,
+.home-page .search-input-group:focus-within {
+    outline: none !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* ช่องค้นหาทรงแคปซูล */
+.home-page .search-input-group input:focus,
+.home-page .search-input-group input:focus-visible {
+    outline: none !important;
+
+    border-color: #d1d5db !important;
+    border-radius: 999px;
+
+    background-color: #ffffff !important;
+
+    /* เงาตามทรงแคปซูลเท่านั้น */
+    box-shadow: 0 0 0 2px rgba(209, 213, 219, 0.45) !important;
+}
+
+/* ไอคอนค้นหาตอนกด */
+.home-page .search-input-group:focus-within i {
+    color: #9ca3af;
+
+    /* ไม่ขยายและไม่กระโดด */
+    transform: translateY(-50%);
+
+    transition: color 220ms ease;
+}
+
+/* =========================================================
+   ป้องกัน Chrome Autofill เปลี่ยนสีช่องกรอก
+========================================================= */
+
+.home-page input:-webkit-autofill,
+.home-page input:-webkit-autofill:hover,
+.home-page input:-webkit-autofill:focus,
+.home-page textarea:-webkit-autofill,
+.home-page textarea:-webkit-autofill:hover,
+.home-page textarea:-webkit-autofill:focus,
+.home-page select:-webkit-autofill,
+.home-page select:-webkit-autofill:hover,
+.home-page select:-webkit-autofill:focus {
+    -webkit-text-fill-color: #111827 !important;
+
+    -webkit-box-shadow:
+        0 0 0 1000px #ffffff inset,
+        0 0 0 2px rgba(209, 213, 219, 0.45) !important;
+
+    box-shadow:
+        0 0 0 1000px #ffffff inset,
+        0 0 0 2px rgba(209, 213, 219, 0.45) !important;
+
+    caret-color: #111827;
+    transition: background-color 9999s ease-in-out 0s;
+}
+
+/* =========================================================
+   2. SCROLL REVEAL
+   เคลื่อนไหวเฉพาะหน้าแรก
+========================================================= */
+
+.home-page .reveal {
+    opacity: 0;
+    transform: translate3d(0, 28px, 0);
+
+    transition:
+        opacity 850ms cubic-bezier(0.22, 1, 0.36, 1),
+        transform 850ms cubic-bezier(0.22, 1, 0.36, 1);
+
+    transition-delay: var(--reveal-delay, 0ms);
+
+    will-change: opacity, transform;
+}
+
+/* เมื่อ JavaScript เพิ่ม class show */
+.home-page .reveal.show {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    will-change: auto;
+}
+
+/* เลื่อนเข้าจากขวา */
+.home-page .reveal.slide-left {
+    transform: translate3d(32px, 0, 0);
+}
+
+.home-page .reveal.slide-left.show {
+    transform: translate3d(0, 0, 0);
+}
+
+/* เลื่อนเข้าจากซ้าย */
+.home-page .reveal.slide-right {
+    transform: translate3d(-32px, 0, 0);
+}
+
+.home-page .reveal.slide-right.show {
+    transform: translate3d(0, 0, 0);
+}
+
+/* ขยายเข้ามาแบบนุ่ม */
+.home-page .reveal.scale-in {
+    transform: translate3d(0, 14px, 0) scale(0.975);
+}
+
+.home-page .reveal.scale-in.show {
+    transform: translate3d(0, 0, 0) scale(1);
+}
+
+/* =========================================================
+   3. ทำให้รูปภาพเคลื่อนไหวสมูท
+========================================================= */
+
+.home-page .hero-section,
+.home-page .about-image-card img,
+.home-page .chicken-img,
+.home-page .farm-logo,
+.home-page .about-modal-image {
+    transform-origin: center;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+/* รูปเกี่ยวกับระบบ */
+.home-page .about-image-card img {
+    transition:
+        transform 650ms cubic-bezier(0.22, 1, 0.36, 1),
+        filter 500ms ease;
+}
+
+.home-page .about-image-card:hover img {
+    transform: scale(1.025);
+    filter: brightness(1.025);
+}
+
+/* รูปไก่ */
+.home-page .chicken-img {
+    transition:
+        transform 600ms cubic-bezier(0.22, 1, 0.36, 1),
+        filter 450ms ease;
+}
+
+.home-page .chicken-card:hover .chicken-img {
+    transform: scale(1.025);
+    filter: brightness(1.02);
+}
+
+/* โลโก้ฟาร์ม */
+.home-page .farm-logo {
+    transition:
+        transform 550ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.home-page .farm-card:hover .farm-logo {
+    transform: scale(1.025);
+}
+
+/* รูปใน Modal */
+.home-page .about-modal-image {
+    transition:
+        transform 550ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.home-page .about-modal-image:hover {
+    transform: scale(1.015);
+}
+
+/* =========================================================
+   4. ลดการเคลื่อนไหวของ Card
+   ไม่ให้เด้งหรือขยายแรงเกินไป
+========================================================= */
+
+.home-page .about-image-card,
+.home-page .chicken-card,
+.home-page .farm-card,
+.home-page .step-card,
+.home-page .breed-card {
+    transition:
+        transform 400ms cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 400ms ease,
+        border-color 400ms ease;
+}
+
+.home-page .about-image-card:hover,
+.home-page .chicken-card:hover,
+.home-page .farm-card:hover,
+.home-page .step-card:hover,
+.home-page .breed-card:hover {
+    transform: translate3d(0, -5px, 0);
+}
+
+/* ตอนกดไม่ให้ Card ยุบแรง */
+.home-page .about-image-card:active,
+.home-page .chicken-card:active,
+.home-page .farm-card:active,
+.home-page .step-card:active,
+.home-page .breed-card:active {
+    transform: translate3d(0, -2px, 0) scale(0.995);
+}
+
+/* =========================================================
+   5. Stagger Delay
+   ให้แต่ละรายการค่อย ๆ แสดงตามลำดับ
+========================================================= */
+
+.home-page .about-image-grid .about-image-card:nth-child(1) {
+    --reveal-delay: 0ms;
+}
+
+.home-page .about-image-grid .about-image-card:nth-child(2) {
+    --reveal-delay: 100ms;
+}
+
+.home-page .about-image-grid .about-image-card:nth-child(3) {
+    --reveal-delay: 200ms;
+}
+
+.home-page .steps-grid .step-card:nth-child(1) {
+    --reveal-delay: 0ms;
+}
+
+.home-page .steps-grid .step-card:nth-child(2) {
+    --reveal-delay: 80ms;
+}
+
+.home-page .steps-grid .step-card:nth-child(3) {
+    --reveal-delay: 160ms;
+}
+
+.home-page .steps-grid .step-card:nth-child(4) {
+    --reveal-delay: 240ms;
+}
+
+/* =========================================================
+   6. Mobile
+   ลดระยะการเคลื่อนที่ให้เหมาะกับมือถือ
+========================================================= */
+
+@media (max-width: 560px) {
+    .home-page .reveal {
+        transform: translate3d(0, 18px, 0);
+
+        transition-duration: 650ms;
+    }
+
+    .home-page .reveal.slide-left {
+        transform: translate3d(20px, 0, 0);
+    }
+
+    .home-page .reveal.slide-right {
+        transform: translate3d(-20px, 0, 0);
+    }
+
+    .home-page .reveal.scale-in {
+        transform: translate3d(0, 10px, 0) scale(0.985);
+    }
+
+    .home-page .reveal.show,
+    .home-page .reveal.slide-left.show,
+    .home-page .reveal.slide-right.show,
+    .home-page .reveal.scale-in.show {
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+}
+
+/* =========================================================
+   7. หน้าอื่นไม่ให้มีการเคลื่อนไหว
+========================================================= */
+
+body:not(.home-page) .reveal,
+body:not(.home-page) .reveal.show,
+body:not(.home-page) .reveal.slide-left,
+body:not(.home-page) .reveal.slide-right,
+body:not(.home-page) .reveal.scale-in {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+    will-change: auto !important;
+}
+
+/* =========================================================
+   8. ผู้ใช้ที่ตั้งค่าลด Animation
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .home-page *,
+    .home-page *::before,
+    .home-page *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.001ms !important;
+
+        scroll-behavior: auto !important;
+    }
+
+    .home-page .reveal,
+    .home-page .reveal.show,
+    .home-page .reveal.slide-left,
+    .home-page .reveal.slide-right,
+    .home-page .reveal.scale-in {
+        opacity: 1 !important;
+        transform: none !important;
     }
 }

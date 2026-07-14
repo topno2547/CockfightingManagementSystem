@@ -73,7 +73,7 @@ body {
 }
 
 .input-group:focus-within {
-    border-color: #808080;
+    border-color: #313131;
     box-shadow:
         0 0 0 1px rgba(142, 142, 142, 0.8),
         0 1px 5px rgba(66, 66, 66, 0.18);
@@ -191,7 +191,7 @@ input[type="password"]::-webkit-caps-lock-indicator {
 
 .password-rule i {
     font-size: 16px;
-    color: #d1d5db;
+    color: #838383;
     transition: .3s;
 }
 
